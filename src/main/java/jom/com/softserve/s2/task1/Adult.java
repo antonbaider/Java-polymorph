@@ -1,9 +1,12 @@
 package jom.com.softserve.s2.task1;
 
 public class Adult extends Person{
-    int age;
-    String healthInfo;
-    String passportNumber;
-    String name;
-    String getHealthStatus(){ return name +" " + healthInfo; }
+    private String passportNumber;
+
+    public Adult(int age, String name, String healthInfo, String passportNumber) {
+        super(age, name, healthInfo);
+        this.passportNumber = passportNumber;
+    }
+
+
 }

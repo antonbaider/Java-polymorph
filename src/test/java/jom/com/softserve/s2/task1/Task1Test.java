@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Task1Test {
 
     final private static String PACKAGE = "jom.com.softserve.s2.task1.";
-/*
+
 
     @DisplayName("Check that Classes is present")
     @ParameterizedTest
@@ -238,6 +238,6 @@ class Task1Test {
             fail("There is no class " + clas);
         }
     }
-*/
+
 
 }
