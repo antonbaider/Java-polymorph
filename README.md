@@ -3,7 +3,7 @@
 Let the code given.
 ```java
 public class Shape {
-    private String name;
+    private final String name;
 
     public Shape(String name) {
         this.name = name;

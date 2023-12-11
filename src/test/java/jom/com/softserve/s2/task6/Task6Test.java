@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class Task6Test {
     final private static String PACKAGE = "jom.com.softserve.s2.task6.";
-/*
+
     @DisplayName("Check that Classes is present")
     @ParameterizedTest
     @MethodSource("listOfClasses")
@@ -168,15 +168,15 @@ public class Task6Test {
     @Test
     void checkOriginUnchanged() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape) new Circle("Circle", 2.0));
-        originList.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape) new Circle("Circle", 1.0));
-        originList.add((Shape) new Rectangle("Rectangle", 3.0, 2.0));
-        originList.add((Shape) new Circle("Circle", 0.5));
-        originList.add((Shape) new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Rectangle("Rectangle", 3.0, 2.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
         final List<Shape> sendList = new ArrayList<Shape>(originList);
         try {
-            new MyUtils().maxAreas((List) sendList);
+            new MyUtils().maxAreas(sendList);
             assertEquals(originList, sendList);
         } catch (Exception e) {
             fail("Original parameters changed in method");
@@ -187,17 +187,17 @@ public class Task6Test {
     @Test
     void checkUniqueAll() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape) new Circle("Circle", 2.0));
-        originList.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape) new Circle("Circle", 1.0));
-        originList.add((Shape) new Circle("Circle", 0.5));
-        originList.add((Shape) new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape) new Circle("Circle", 2.0));
-        expected.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Circle("Circle", 2.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with unique names");
@@ -208,18 +208,18 @@ public class Task6Test {
     @Test
     void checkDuplicateCircle() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape) new Circle("Circle", 2.0));
-        originList.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape) new Circle("Circle", 1.0));
-        originList.add((Shape) new Circle("Circle", 0.5));
-        originList.add((Shape) new Rectangle("Rectangle", 1.0, 2.0));
-        originList.add((Shape) new Circle("Circle", 2.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Circle("Circle", 2.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape) new Circle("Circle", 2.0));
-        expected.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Circle("Circle", 2.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with two equal squares  in  the sumPerimeter method  parameter");
@@ -230,18 +230,18 @@ public class Task6Test {
     @Test
     void checkDuplicateRectangle() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape) new Circle("Circle", 2.0));
-        originList.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape) new Circle("Circle", 1.0));
-        originList.add((Shape) new Circle("Circle", 0.5));
-        originList.add((Shape) new Rectangle("Rectangle", 1.0, 2.0));
-        originList.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape) new Circle("Circle", 2.0));
-        expected.add((Shape) new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Circle("Circle", 2.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with two equal rectangle in the maxAreas method parameter");
@@ -252,19 +252,19 @@ public class Task6Test {
     @Test
     void checkDuplicateCircleRectangle() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape)new Circle("Circle", 2.0));
-        originList.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape)new Circle("Circle", 1.0));
-        originList.add((Shape)new Circle("Circle", 0.5));
-        originList.add((Shape)new Rectangle("Rectangle", 1.0, 2.0));
-        originList.add((Shape)new Circle("Circle", 2.0));
-        originList.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape)new Circle("Circle", 2.0));
-        expected.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Circle("Circle", 2.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with two duplicate circles and rectangles in the maxAreas method parameter");
@@ -275,21 +275,21 @@ public class Task6Test {
     @Test
     void checkDuplicateCondition() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape)new Circle("Circle", 2.0));
-        originList.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
-        originList.add((Shape)new Circle("Circle", 1.0));
-        originList.add((Shape)new Rectangle("Rectangle", 3.0, 2.0));
-        originList.add((Shape)new Circle("Circle", 0.5));
-        originList.add((Shape)new Rectangle("Rectangle", 1.0, 2.0));
-        originList.add((Shape)new Circle("Circle", 2.0));
-        originList.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Circle("Circle", 1.0));
+        originList.add(new Rectangle("Rectangle", 3.0, 2.0));
+        originList.add(new Circle("Circle", 0.5));
+        originList.add(new Rectangle("Rectangle", 1.0, 2.0));
+        originList.add(new Circle("Circle", 2.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape)new Circle("Circle", 2.0));
-        expected.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
-        expected.add((Shape)new Rectangle("Rectangle", 3.0, 2.0));
+        expected.add(new Circle("Circle", 2.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Rectangle("Rectangle", 3.0, 2.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with figures with equal area by calculate");
@@ -300,12 +300,12 @@ public class Task6Test {
     @Test
     void checkOneSquare() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
+        originList.add(new Rectangle("Rectangle", 2.0, 3.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape)new Rectangle("Rectangle", 2.0, 3.0));
+        expected.add(new Rectangle("Rectangle", 2.0, 3.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with one circle");
@@ -316,12 +316,12 @@ public class Task6Test {
     @Test
     void checkOneRectangle() {
         final List<Shape> originList = new ArrayList<Shape>();
-        originList.add((Shape)new Circle("Circle", 2.0));
+        originList.add(new Circle("Circle", 2.0));
         final List<Shape> expected = new ArrayList<Shape>();
-        expected.add((Shape)new Circle("Circle", 2.0));
+        expected.add(new Circle("Circle", 2.0));
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with one Rectangle");
@@ -335,7 +335,7 @@ public class Task6Test {
         final List<Shape> expected = new ArrayList<Shape>();
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertEquals(new HashSet(expected), new HashSet(actual));
         } catch (Exception e) {
             fail("Do not work correct with empty List");
@@ -351,11 +351,11 @@ public class Task6Test {
         expected.add(null);
         List<Shape> actual = null;
         try {
-            actual = (List<Shape>) new MyUtils().maxAreas((List) originList);
+            actual = (List<Shape>) new MyUtils().maxAreas(originList);
             assertTrue(actual.size() == 0 || expected.equals(actual));
         } catch (Exception e) {
             fail("Do not work correct if content is null");
         }
     }
-    */
+
 }
