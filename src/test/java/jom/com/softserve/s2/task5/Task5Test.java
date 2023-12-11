@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Task5Test {
 
     final private static String PACKAGE = "jom.com.softserve.s2.task5.";
-/*
+
     @DisplayName("Check that Classes is present")
     @ParameterizedTest
     @MethodSource("listOfClasses")
@@ -294,5 +294,5 @@ public class Task5Test {
             fail("Content is null");
         }
     }
-    */
+
 }
