@@ -1,12 +1,12 @@
 package jom.com.softserve.s2.task6;
 
 import java.util.*;
-import java.util.function.Function;
+
 import java.util.stream.Collectors;
 
 public class MyUtils {
 
-    List<Shape> maxAreas(List<Shape> shapes) {
+   public List<Shape> maxAreas(List<Shape> shapes) {
         if (shapes == null || shapes.isEmpty()) {
             return List.of();
         }
